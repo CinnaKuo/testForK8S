@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cinnakuotestforks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cinnakuotestforks
+  template:
+    metadata:
+      labels:
+        app: cinnakuotestforks 
+    spec:
+      containers:
+        - name: cinnakuotestforks 
+          image: mycontainerregistrytest2.azurecr.io/cinnakuotestforks
+          ports:
+          - containerPort: 8080
